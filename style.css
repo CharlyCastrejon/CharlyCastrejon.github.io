@@ -209,8 +209,31 @@ a {
     scroll-margin-top: 100px; /* Offset for sticky header */
 }
 
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border: 5px solid var(--color-bg-light);
+    box-shadow: 0 0 0 2px var(--color-brand), var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 4px var(--color-brand), var(--shadow-lg);
+}
+
 .hero-content {
-    max-width: 800px;
+    flex: 1;
+    max-width: 700px;
 }
 
 .badge {
@@ -621,6 +644,21 @@ a {
 @media (max-width: 900px) {
     .dual-column-section {
         grid-template-columns: 1fr;
+    }
+    
+    .hero-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .hero-image img {
+        width: 200px;
+        height: 200px;
     }
 }
 
